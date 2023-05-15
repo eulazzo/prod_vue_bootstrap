@@ -38,9 +38,7 @@ export default {
   components: { MiniCart },
   computed: {
     quantity() {
-      return this.$store.state.cart
-        .map((item) => item.quantity)
-        .reduce((acc, cur) => acc + cur, 0);
+      return this.$store.state.cart.length
     },
   },
 };

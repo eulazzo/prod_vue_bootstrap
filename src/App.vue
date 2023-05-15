@@ -1,6 +1,7 @@
 <template>
   <div>
     <header-component />
+    <hero-item />
     <div class="container">
       <RouterView />
     </div>
@@ -9,10 +10,11 @@
 
 <script>
 import HeaderComponent from "./components/HeaderComponent.vue";
+import HeroItem from "./components/HeroItem.vue";
 
 export default {
   name: "App",
-  components: { HeaderComponent },
+  components: { HeaderComponent,HeroItem },
 };
 </script>
 
