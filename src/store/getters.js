@@ -11,8 +11,19 @@ export const currentProduct = (state) => {
 };
 
 export const cartAddedProducts = (state) => {
-  console.log(state.cart);
   return state.cart;
 };
 
-export default { listProducts, isLoading, currentProduct,cartAddedProducts };
+export const cartAddedTotalValue = (state) => {
+  return state.cart
+    .map((item) => item.quantity * item.product.price)
+    .reduce((acc, cur) => acc + cur, 0);
+};
+
+export default {
+  listProducts,
+  isLoading,
+  currentProduct,
+  cartAddedProducts,
+  cartAddedTotalValue,
+};

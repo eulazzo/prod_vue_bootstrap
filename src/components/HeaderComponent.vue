@@ -3,7 +3,9 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <div class="container">
         <div class="nav navbar-nav">
-          <router-link class="nav-item nav-link active" to="/">Home</router-link>
+          <router-link class="nav-item nav-link active" to="/"
+            >Home</router-link
+          >
           <a class="nav-item nav-link" href="#">Product</a>
         </div>
 
@@ -17,7 +19,7 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              0 Cart
+              {{ quantity }} Cart
             </button>
             <div @click="(e) => e.stopPropagation()">
               <MiniCart />
@@ -34,6 +36,13 @@ import MiniCart from "../components/MiniCart.vue";
 export default {
   name: "HeaderComponent",
   components: { MiniCart },
+  computed: {
+    quantity() {
+      return this.$store.state.cart
+        .map((item) => item.quantity)
+        .reduce((acc, cur) => acc + cur, 0);
+    },
+  },
 };
 </script>
 

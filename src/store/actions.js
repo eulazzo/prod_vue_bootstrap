@@ -30,3 +30,11 @@ export const addProductToCart = async ({ commit }, { product, quantity }) => {
     commit("SET_ERROR", true);
   }
 };
+
+export const clearCart = async ({ commit }) => {
+  commit("CLEAR_CART");
+};
+
+export const removeItem = async ({ commit },id) => {
+  commit("REMOVE_ITEM",id);
+};

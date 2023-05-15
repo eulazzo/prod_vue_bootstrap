@@ -5,28 +5,28 @@
       "productName": "Monitor Husky Tempest 34",
       "productDescription": "An awesome monitor game to developers",
       "prodImgURL": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
-      "price": 23
+      "price": 232
     },
     {
       "id": 2,
       "productName": "Keyboard Razer Blackwidow Elite",
       "productDescription": "A mechanical gaming keyboard with customizable RGB lighting",
       "prodImgURL": "https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      "price": 23
+      "price": 233
     },
     {
       "id": 3,
       "productName": "Mouse Logitech G Pro Wireless",
       "productDescription": "A wireless gaming mouse with high precision and a lightweight design",
       "prodImgURL": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
-      "price": 23
+      "price": 123
     },
     {
       "id": 4,
       "productName": "Headset HyperX Cloud II",
       "productDescription": "A gaming headset with 7.1 virtual surround sound and a noise-cancelling microphone",
       "prodImgURL": "https://images.unsplash.com/photo-1553456558-aff63285bdd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
-      "price": 23
+      "price": 136
     },
     {
       "id": 5,
@@ -39,21 +39,21 @@
       "productName": "Processor AMD Ryzen 9 5900X",
       "productDescription": "A 12-core, 24-thread processor with a base clock speed of 3.7GHz and a boost clock speed of 4.8GHz",
       "prodImgURL": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
-      "price": 23
+      "price": 123
     },
     {
       "id": 7,
       "productName": "Motherboard ASUS ROG Strix X570-E",
       "productDescription": "A high-performance motherboard with PCIe 4.0 support and Wi-Fi 6 connectivity",
       "prodImgURL": "https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
-      "price": 23
+      "price": 253
     },
     {
       "id": 8,
       "productName": "SSD Samsung 970 EVO Plus",
       "productDescription": "A fast NVMe SSD with read speeds of up to 3,500 MB/s and write speeds of up to 3,300 MB/s",
       "prodImgURL": "https://plus.unsplash.com/premium_photo-1670537995423-4f1c8313fb3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
-      "price": 23
+      "price": 623
     }
   ]
 }
