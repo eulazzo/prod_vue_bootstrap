@@ -11,13 +11,19 @@
       <h1>{{ currentProduct?.productName }}</h1>
       <h3>$45</h3>
 
-      <input class="text-center col-1 mr-2 p-1" type="text" />
+      <div class="d-flex gap-2 mb-4 mt-2">
+        <input
+          v-model="quantity"
+          placeholder="Quantity"
+          class="col-2 mr-2 p-1"
+          type="number"
+        />
+      </div>
       <button @click="addToCard" class="btn btn-primary">Add To Cart</button>
 
       <p class="mt-4">
         {{ currentProduct?.productDescription }}
       </p>
-
     </div>
   </div>
 </template>
@@ -25,6 +31,11 @@
 import { mapGetters } from "vuex";
 export default {
   props: ["id"],
+  data() {
+    return {
+      quantity: "",
+    };
+  },
 
   async created() {
     await this.$store.dispatch("getProductById", this.id);
@@ -34,7 +45,14 @@ export default {
     ...mapGetters(["currentProduct"]),
   },
 
-  
+  methods: {
+    addToCard() {
+      this.$store.dispatch("addProductToCart", {
+        product: this.currentProduct,
+        quantity: this.quantity,
+      });
+    },
+  },
 };
 </script>
 <style></style>

@@ -16,7 +16,7 @@ export const cartAddedProducts = (state) => {
 
 export const cartAddedTotalValue = (state) => {
   return state.cart
-    .map((item) => item.quantity * item.product.price)
+    .map((item) => item?.quantity * item?.product?.price)
     .reduce((acc, cur) => acc + cur, 0);
 };
 

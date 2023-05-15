@@ -11,27 +11,32 @@ export const ApiService = {
     app.axios.defaults.baseURL = API_URL;
   },
   async get(resource) {
-      this.init();
+    this.init();
     try {
       const { data } = await axios.get(`${resource}`);
-      console.log(data);
-
       return data;
     } catch (error) {
-       console.log(error);
+      console.log(error);
     }
   },
 
   async post(resource, info) {
     this.init();
     try {
-      const { data } = await axios.post(`/${resource}`, JSON.stringify(info), {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const { data } = await axios.post(
+        `http://localhost:3000/cart`,
+        JSON.stringify(info),
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      console.log(data);
       return data;
     } catch (error) {
+      console.log(error);
       return error.response.data;
     }
   },
@@ -52,10 +57,20 @@ export const ApiService = {
 
   async delete(resource) {
     try {
-      const data = await fetch(`${API_URL}/${resource}`, {
+      const data = await fetch(`http://localhost:3000/cart/${resource} `, {
         method: "DELETE",
       });
       return await data.json();
+    } catch (error) {
+      return console.log(error);
+    }
+  },
+
+  async deleteAll( ) {
+    try {
+      await fetch(`http://localhost:3000/cart`, {
+        method: "DELETE",
+      });
     } catch (error) {
       return console.log(error);
     }

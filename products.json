@@ -55,5 +55,25 @@
       "prodImgURL": "https://plus.unsplash.com/premium_photo-1670537995423-4f1c8313fb3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
       "price": 623
     }
+  ],
+  "cart": [
+    {
+      "product_id": 4,
+      "id": 4,
+      "productName": "Headset HyperX Cloud II",
+      "productDescription": "A gaming headset with 7.1 virtual surround sound and a noise-cancelling microphone",
+      "prodImgURL": "https://images.unsplash.com/photo-1553456558-aff63285bdd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+      "price": 136,
+      "quantity": 1
+    },
+    {
+      "product_id": 3,
+      "id": 3,
+      "productName": "Mouse Logitech G Pro Wireless",
+      "productDescription": "A wireless gaming mouse with high precision and a lightweight design",
+      "prodImgURL": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+      "price": 123,
+      "quantity": 1
+    }
   ]
 }

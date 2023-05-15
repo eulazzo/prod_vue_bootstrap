@@ -28,6 +28,10 @@ export const CLEAR_CART = (state) => {
   state.cart = [];
 };
 
-export const REMOVE_ITEM = (state,id) => {
-  state.cart = state.cart.filter(item=>item.product.id!==id)
+export const REMOVE_ITEM = (state, id) => {
+  state.cart = state.cart.filter((item) => item.product.id !== id);
+};
+
+export const SET_CART = (state, cartItens) => {
+  state.cart = cartItens;
 };

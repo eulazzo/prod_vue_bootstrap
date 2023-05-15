@@ -11,6 +11,20 @@ export const ProductService = {
   async create(payload) {
     return await ApiService.post(`/products`, payload);
   },
+
+  async postCart(payload) {
+    return await ApiService.post(`/cart`, payload);
+  },
+  async getCardItens() {
+    return await ApiService.get(`/cart`);
+  },
+
+  async remove(id="") {
+      return await ApiService.delete(id);
+  },
+  async removeAll(){
+    return await ApiService.deleteAll()
+  }
 };
 
 export default ProductService;

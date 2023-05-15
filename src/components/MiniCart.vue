@@ -7,17 +7,17 @@
     <div class="mt-2" v-for="item in cartAddedProducts" :key="item.id">
       <div class="d-flex px-3 justify-content-between gap-2">
         <div>
-          <img class="my-custom-image" :src="item.product.prodImgURL" alt="" />
+          <img class="my-custom-image" :src="item?.product?.prodImgURL" alt="" />
         </div>
 
         <div>
-          <p class="fw-bold">{{ item.product.productName }}</p>
+          <p class="fw-bold">{{ item?.product?.productName }}</p>
           <br />
-          {{ item.quantity }} X ${{ item.product.price }}
+          {{ item?.quantity }} X ${{ item?.product?.price }}
         </div>
         <div>
           <button
-            @click="removeProductByIdHandler(item.product.id)"
+            @click="removeProductByIdHandler(item?.product?.id)"
             class="badge badge-secondary btn-remove"
           >
             Remove
@@ -58,6 +58,11 @@ export default {
   computed: {
     ...mapGetters(["cartAddedProducts", "cartAddedTotalValue"]),
   },
+
+  created() {
+    this.$store.dispatch("getCartItens");
+  },
+
   methods: {
     clearCartHandler() {
       return this.$store.dispatch("clearCart");
