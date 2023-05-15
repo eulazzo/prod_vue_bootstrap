@@ -3,9 +3,7 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <div class="container">
         <div class="nav navbar-nav">
-          <a class="nav-item nav-link active" href="#" aria-current="page"
-            >Home <span class="visually-hidden">Home</span></a
-          >
+          <router-link class="nav-item nav-link active" to="/">Home</router-link>
           <a class="nav-item nav-link" href="#">Product</a>
         </div>
 
@@ -21,9 +19,9 @@
             >
               0 Cart
             </button>
-           <div @click="e=>e.stopPropagation()">
-            <MiniCart />
-           </div>
+            <div @click="(e) => e.stopPropagation()">
+              <MiniCart />
+            </div>
           </div>
         </div>
       </div>

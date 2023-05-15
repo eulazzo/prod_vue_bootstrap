@@ -1,34 +1,33 @@
 <template>
-  <div>
-    <div class="col-3 mt-3">
-      <div class="card text-left">
-        <img class="w-full" src="https://via.placeholder.com/150x100" alt="" />
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="">Product Title</a>
-          </h4>
-          <strong>$43</strong>
-          <p class="card-text">
-            Introducing the new "ZenVibe" meditation cushion - the perfect
-            companion for your daily meditation practice. Crafted from
-            high-quality, eco-friendly materials, the ZenVibe cushion offers
-            exceptional comfort and support, allowing you to focus on your
-            meditation without any distractions. The cushion's unique design
-            provides the perfect height and firmness to support your hips and
-            spine, promoting proper alignment and reducing discomfort during
-            long meditation sessions.
-          </p>
-        </div>
-
-        <div>
-          <button class="btn btn-secondary">Add to Cart</button>
-        </div>
-      </div>
+  <div class="d-flex align-items-stretch flex-wrap justify-content-center">
+    <div v-if="isLoading" class="spinner-border" role="status">
+      <span class="sr-only"></span>
     </div>
+    <ProductItem
+      v-else-if="!isLoading"
+      v-for="product in listProducts"
+      :key="product._id"
+      :product="product"
+    />
+    <pagination  />
   </div>
 </template>
 <script>
-export default {};
+import Pagination from "./PaginationItem.vue";
+import ProductItem from "./ProductItem.vue";
+import { mapGetters } from "vuex";
+
+export default {
+  components: { ProductItem, Pagination },
+
+  async created() {
+    await this.$store.dispatch("getProducts");
+  },
+
+  computed: {
+    ...mapGetters(["listProducts", "isLoading"]),
+  },
+};
 </script>
 
 <style scoped></style>

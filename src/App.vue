@@ -1,20 +1,19 @@
 <template>
-  <div  >
+  <div>
     <header-component />
-    <RouterView />
-
+    <div class="container">
+      <RouterView />
+    </div>
   </div>
 </template>
 
 <script>
-import HeaderComponent from './components/HeaderComponent.vue';
+import HeaderComponent from "./components/HeaderComponent.vue";
 
 export default {
-  name: 'App',
-  components:{HeaderComponent}
-}
+  name: "App",
+  components: { HeaderComponent },
+};
 </script>
 
-<style>
- 
-</style>
+<style></style>

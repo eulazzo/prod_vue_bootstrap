@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import PageHome from '../views/PageHome.vue'
+import PageHome from "../views/PageHome.vue";
+import ProductDetails from "../views/ProductDetails.vue";
 
 const routes = [
   {
@@ -9,6 +10,13 @@ const routes = [
     component: PageHome,
     meta: { hasAuth: true },
   },
+  {
+    path: "/product/:id",
+    name: "Product",
+    component: ProductDetails,
+    meta: { hasAuth: true },
+    props: true,
+  },
 ];
 
 const router = createRouter({
@@ -16,4 +24,4 @@ const router = createRouter({
   routes: routes,
 });
 
-export default router
+export default router;
