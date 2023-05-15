@@ -3,4 +3,5 @@ export default {
   currentProduct: null,
   isLoading: false,
   isError: false,
+  cart:[]
 };

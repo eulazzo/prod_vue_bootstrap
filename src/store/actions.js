@@ -12,12 +12,21 @@ export const getProducts = async ({ commit }) => {
   }
 };
 
-export const getProductById = async ({commit},payload) => {
+export const getProductById = async ({ commit }, payload) => {
   try {
-    const response = await ProductService.getById(payload)
-    commit("GET_PRODUCT_BY_ID",response);
+    const response = await ProductService.getById(payload);
+    commit("GET_PRODUCT_BY_ID", response);
     commit("SET_ERROR", false);
   } catch (error) {
     commit("SET_ERROR", true);
   }
-}
+};
+
+export const addProductToCart = async ({ commit }, { product, quantity }) => {
+  try {
+    commit("ADD_TO_CART", { product, quantity });
+    commit("SET_ERROR", false);
+  } catch (error) {
+    commit("SET_ERROR", true);
+  }
+};

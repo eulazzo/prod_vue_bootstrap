@@ -10,4 +10,9 @@ export const currentProduct = (state) => {
   return state.currentProduct;
 };
 
-export default { listProducts, isLoading, currentProduct };
+export const cartAddedProducts = (state) => {
+  console.log(state.cart);
+  return state.cart;
+};
+
+export default { listProducts, isLoading, currentProduct,cartAddedProducts };

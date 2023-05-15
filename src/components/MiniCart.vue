@@ -4,30 +4,46 @@
     style="min-width: 320px; right: 0; left: auto"
     aria-labelledby="triggerId"
   >
-    <div>
+    <div v-for="item in cartAddedProducts" :key="item.id">
       <div class="d-flex px-3 justify-content-between">
         <div>
-          <strong>Product Title</strong>
+          <strong>{{ item.product.productName }}</strong>
           <br />
-          1 X $34
+          {{ item.product.quantity }} X ${{ item.product.price }}
         </div>
         <div>
-          <a href="#" class="badge badge-secondary btn">Remove</a>
+          <button class="badge badge-secondary btn">Remove</button>
         </div>
       </div>
     </div>
 
-    <hr />
+    <div>
+      <template v-if="cartAddedProducts.length">
+        <hr />
+        <div class="d-flex justify-content-between">
+          <span>Total: $34.00</span>
+          <a href="#">Clear Cart</a>
+        </div>
+      </template>
 
-    <div class="d-flex justify-content-between">
-        <span>Total: $34.00</span>
-        <a href="#">Clear Cart</a>
+      <template v-else>
+        <div class="p-3 d-flex align-items-center ">
+           <img src="../assets/img/empty_box.png" class="w-2 h-2" alt="">
+          <span>Your cart is empty!</span>
+        </div>
+      </template>
     </div>
-
   </div>
+
 </template>
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  name: "MiniCart",
+  computed: {
+    ...mapGetters(["cartAddedProducts"]),
+  },
+};
 </script>
 <style scoped>
 .btn {

@@ -10,6 +10,10 @@ export const SET_ERROR = (state, value) => {
   state.isLoading = value;
 };
 
-export const GET_PRODUCT_BY_ID = (state,payload) =>{
+export const GET_PRODUCT_BY_ID = (state, payload) => {
   state.currentProduct = payload;
-}
+};
+
+export const ADD_TO_CART = (state, { product, quantity }) => {
+  state.cart.push({ product, quantity });
+};

@@ -12,11 +12,12 @@
       <h3>$45</h3>
 
       <input class="text-center col-1 mr-2 p-1" type="text" />
-      <button class="btn btn-primary">Add To Cart</button>
+      <button @click="addToCard" class="btn btn-primary">Add To Cart</button>
 
       <p class="mt-4">
         {{ currentProduct?.productDescription }}
       </p>
+
     </div>
   </div>
 </template>
@@ -32,6 +33,8 @@ export default {
   computed: {
     ...mapGetters(["currentProduct"]),
   },
+
+  
 };
 </script>
 <style></style>

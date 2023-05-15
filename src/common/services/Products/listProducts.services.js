@@ -8,6 +8,9 @@ export const ProductService = {
   async getById(id) {
     return await ApiService.get(`/products/${id}`);
   },
+  async create(payload) {
+    return await ApiService.post(`/products`, payload);
+  },
 };
 
 export default ProductService;

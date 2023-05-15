@@ -8,14 +8,16 @@
             product.productName
           }}</router-link>
         </h4>
-        <strong>${{product.price}}</strong>
+        <strong>${{ product.price }}</strong>
         <p class="card-text">
           {{ product.productDescription }}
         </p>
       </div>
 
       <div class="px-4 pb-3">
-        <button class="btn btn-secondary">Add to Cart</button>
+        <button class="btn btn-secondary" @click="addToCard">
+          Add to Cart
+        </button>
       </div>
     </div>
   </div>
@@ -24,6 +26,15 @@
 export default {
   props: {
     product: { type: Object, required: true, default: null },
+  },
+
+  methods: {
+    addToCard() {
+      this.$store.dispatch("addProductToCart", {
+        product: this.product,
+        quantity: 1,
+      });
+    },
   },
 };
 </script>
