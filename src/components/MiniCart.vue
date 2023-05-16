@@ -7,7 +7,11 @@
     <div class="mt-2" v-for="item in cartAddedProducts" :key="item.id">
       <div class="d-flex px-3 justify-content-between gap-2">
         <div>
-          <img class="my-custom-image" :src="item?.product?.prodImgURL" alt="" />
+          <img
+            class="my-custom-image"
+            :src="item?.product?.prodImgURL"
+            alt=""
+          />
         </div>
 
         <div>
@@ -17,7 +21,7 @@
         </div>
         <div>
           <button
-            @click="removeProductByIdHandler(item?.product?.id)"
+            @click="removeItem(item?.product?.id)"
             class="badge badge-secondary btn-remove"
           >
             Remove
@@ -31,9 +35,7 @@
         <hr />
         <div class="d-flex justify-content-between">
           <span>Total: $ {{ cartAddedTotalValue }}</span>
-          <button class="btn btn-success" @click="clearCartHandler">
-            Clear Cart
-          </button>
+          <button class="btn btn-success" @click="clearCart">Clear Cart</button>
         </div>
         <button class="btn btn-success">Payment</button>
       </template>
@@ -52,24 +54,26 @@
   </div>
 </template>
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   name: "MiniCart",
   computed: {
-    ...mapGetters(["cartAddedProducts", "cartAddedTotalValue"]),
+    ...mapGetters({
+      cartAddedProducts: "cart/cartAddedProducts",
+      cartAddedTotalValue: "cart/cartAddedTotalValue",
+    }),
   },
 
   created() {
-    this.$store.dispatch("getCartItens");
+    this.getCartItens;
   },
 
   methods: {
-    clearCartHandler() {
-      return this.$store.dispatch("clearCart");
-    },
-    removeProductByIdHandler(id) {
-      return this.$store.dispatch("removeItem", id);
-    },
+    ...mapActions({
+      clearCart: "cart/clearCart",
+      removeItem: "cart/removeItem",
+      getCartItens: "cart/getCartItens",
+    }),
   },
 };
 </script>

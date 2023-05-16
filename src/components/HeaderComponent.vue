@@ -19,7 +19,7 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              {{ quantity }} Cart
+              {{ cartItemsQuantity }} Cart
             </button>
             <div @click="(e) => e.stopPropagation()">
               <MiniCart />
@@ -33,13 +33,16 @@
 
 <script>
 import MiniCart from "../components/MiniCart.vue";
+import { mapGetters } from "vuex";
 export default {
   name: "HeaderComponent",
   components: { MiniCart },
   computed: {
-    quantity() {
-      return this.$store.state.cart.length
-    },
+    // quantity() {
+    //   return this.$store.state.cart.length
+    // },
+
+    ...mapGetters("cart", ["cartItemsQuantity"]),
   },
 };
 </script>

@@ -13,7 +13,7 @@
 
       <div class="d-flex gap-2 mb-4 mt-2">
         <input
-          v-model="quantity"
+          v-model.number="quantity"
           placeholder="Quantity"
           class="col-2 mr-2 p-1"
           type="number"
@@ -28,7 +28,7 @@
   </div>
 </template>
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   props: ["id"],
   data() {
@@ -38,16 +38,18 @@ export default {
   },
 
   async created() {
-    await this.$store.dispatch("getProductById", this.id);
+    await this.getProductById(this.id);
   },
 
   computed: {
-    ...mapGetters(["currentProduct"]),
+    ...mapGetters("product", ["currentProduct"]),
   },
 
   methods: {
+    ...mapActions("product", ["getProductById"]),
+    ...mapActions("cart", ["addProductToCart"]),
     addToCard() {
-      this.$store.dispatch("addProductToCart", {
+      this.addProductToCart({
         product: this.currentProduct,
         quantity: this.quantity,
       });

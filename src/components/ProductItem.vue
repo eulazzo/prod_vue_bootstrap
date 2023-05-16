@@ -23,14 +23,23 @@
   </div>
 </template>
 <script>
+//import { mapActions } from "vuex";
 export default {
   props: {
     product: { type: Object, required: true, default: null },
   },
 
   methods: {
+    // ...mapActions(["cart", "addProductToCart"]),
+    // addToCard() {
+    //   this.addProductToCart({
+    //     product: this.product,
+    //     quantity: 1,
+    //   });
+    // },
+
     addToCard() {
-      this.$store.dispatch("addProductToCart", {
+      this.$store.dispatch("cart/addProductToCart", {
         product: this.product,
         quantity: 1,
       });

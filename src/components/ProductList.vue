@@ -9,7 +9,7 @@
       :key="product._id"
       :product="product"
     />
-    <pagination  />
+    <pagination />
   </div>
 </template>
 <script>
@@ -21,11 +21,13 @@ export default {
   components: { ProductItem, Pagination },
 
   async created() {
-    await this.$store.dispatch("getProducts");
+    await this.$store.dispatch("product/getProducts")
   },
 
   computed: {
-    ...mapGetters(["listProducts", "isLoading"]),
+    //product module namaspace
+    ...mapGetters("product",["listProducts", "isLoading"]),
+    //...mapActions("product",["getProducts"]),
   },
 };
 </script>

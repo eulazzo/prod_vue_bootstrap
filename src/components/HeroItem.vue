@@ -6,7 +6,7 @@
         >"Unleash the hero within. Shop like a champion"</quote
       >
       <hr class="extraCss" />
-      <span class="author-quote position-absolute top-10 end-0">@eulazzo</span>
+      <span class="author-quote position-absolute top-10 end-0">@Annonymous</span>
     </div>
   </div>
 </template>
